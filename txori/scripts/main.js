@@ -59,10 +59,14 @@ function createGrid ()
 createGrid();
 function drawGrid ()
 {
-    for ( let i = 0; i < cellCount.length; i++ )
+    cellCount.forEach( cell =>
     {
-        cellCount[ i ].draw()
-    }
+        if ( collision( cell, mouse ) )
+        {
+            cell.draw()
+        }
+
+    } )
 }
 
 function animate ()
